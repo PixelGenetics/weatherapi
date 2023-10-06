@@ -15,18 +15,22 @@ const Weatherapi = () => {
 
     const mostrarDatos = () => {
         return clima.map((objeto) => (
-            <div key={objeto}>
-            <p>Latitud: {objeto.lat}</p>
-            <p>Longitud: {objeto.lon}</p>
+            <div key={objeto} className="flex justify-center">
+                <div className="font-pixelfont">
+                    <p>Latitud: {objeto.lat}</p>
+                    <p>Longitud: {objeto.lon}</p>
+                </div>
             </div>
         ))
     }
 
     return (
         <>
-        {mostrarDatos()}
-        <Temp />
-        <CloudsState />
+        <div className="" >  
+            <CloudsState />
+            <Temp />
+            {mostrarDatos()}
+        </div>
         </>
     )
 }
