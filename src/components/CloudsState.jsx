@@ -1,6 +1,10 @@
 import axios from "axios"
 import { useState,useEffect } from "react"
-import cloudspng from '../assets/4188714.png'
+import cloud from '../assets/cloud-solid.svg'
+import rain from '../assets/cloud-rain-solid.svg'
+import snow from '../assets/snowflake-solid.svg'
+import wind from '../assets/wind-solid.svg'
+
 
 const CloudsState = () => {
 
@@ -9,7 +13,7 @@ const CloudsState = () => {
     const [nubes,SetNubes] = useState([])
 
     useEffect(() => {axios.get('https://api.openweathermap.org/data/2.5/weather?lat=12.13&lon=-86.25&appid=56e1337974ab22108e31121b83bc55f2').then(resp => {
-        console.log('resp:',resp.data.weather[0].main)
+        //console.log('resp:',resp.data.weather[0].main)
         SetNubes([resp.data.weather[0].main])
     })},[filtro])
 
@@ -23,13 +27,42 @@ const CloudsState = () => {
         return palabra
     } 
 
-    console.log('adasd',nubeStatus())
+    //console.log('adasd',nubeStatus())
 
+    function weather1(){
+        if (nubeStatus() === 'Clouds') {
+            return (
+                    <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
+                        <img src={cloud} alt="" className="h-16 border-2 border-blue-300"/>
+                    </div>
+            )
+        }else if(nubeStatus() === 'Rain'){
+            return(
+                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
+                    <img src={rain} alt="" className="h-16 border-2 border-blue-300"/>
+                </div>
+            )
+        }else if(nubeStatus() === 'Snow'){
+            return(
+                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
+                    <img src={snow} alt="" className="h-16 border-2 border-blue-300"/>
+                </div>
+            )
+        }else if(nubeStatus() === 'Wind'){
+            return(
+                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
+                    <img src={wind} alt="" className="h-16 border-2 border-blue-300"/>
+                </div>
+            )
+        }
+    }
+
+    //console.log('weather1',weather1())
     return (
         <>
         
         {
-            nubeStatus() === 'Rain' ? <img src={cloudspng} alt="" /> : 'lol'
+            weather1()
         }
         </>
     )
