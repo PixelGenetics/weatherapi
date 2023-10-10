@@ -21,6 +21,7 @@ const CloudsState = () => {
 
     //const palabraRetornada = nubes.toString
 
+    
     function nubeStatus () {
         let palabra 
         nubes.map((datos,index) => palabra = datos)
@@ -32,26 +33,26 @@ const CloudsState = () => {
     function weather1(){
         if (nubeStatus() === 'Clouds') {
             return (
-                    <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
-                        <img src={cloud} alt="" className="h-16 border-2 border-blue-300"/>
+                    <div className="flex justify-center">
+                        <img src={cloud} alt="" className="h-16 "/>
                     </div>
             )
         }else if(nubeStatus() === 'Rain'){
             return(
-                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
-                    <img src={rain} alt="" className="h-16 border-2 border-blue-300"/>
+                <div className="flex justify-center">
+                    <img src={rain} alt="" className="h-16 "/>
                 </div>
             )
         }else if(nubeStatus() === 'Snow'){
             return(
-                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
-                    <img src={snow} alt="" className="h-16 border-2 border-blue-300"/>
+                <div className="flex justify-center">
+                    <img src={snow} alt="" className="h-16 "/>
                 </div>
             )
         }else if(nubeStatus() === 'Wind'){
             return(
-                <div className="border-2 border-red-400 p-10 ml-10 mr-10 flex justify-center">
-                    <img src={wind} alt="" className="h-16 border-2 border-blue-300"/>
+                <div className="flex justify-center">
+                    <img src={wind} alt="" className="h-16 "/>
                 </div>
             )
         }
@@ -60,10 +61,11 @@ const CloudsState = () => {
     //console.log('weather1',weather1())
     return (
         <>
-        
+        <div >
         {
             weather1()
         }
+        </div>
         </>
     )
 }
