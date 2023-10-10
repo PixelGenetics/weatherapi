@@ -7,9 +7,9 @@ import Weatherapi from './components/weatherapi'
 function App() {
   return (
     <>
-      <div className='w-full h-full' >
-        <div className='w-full h-full' style={{backgroundImage: "url('https://r4.wallpaperflare.com/wallpaper/226/682/452/minecraft-waterfall-video-games-wallpaper-899048fd616a7d1bd697080f5011c60d.jpg')"}}>
-        <Weatherapi />
+      <div className='h-screen bg-blue-200 sm:bg-blue-300 md:bg-blue-400'>
+        <div>
+          <Weatherapi />
         </div>
       </div>
     </>
