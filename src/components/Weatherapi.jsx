@@ -26,10 +26,12 @@ const Weatherapi = () => {
 
     return (
         <>
-        <div className="" >  
-            <CloudsState />
-            <Temp />
-            {mostrarDatos()}
+        <div className="h-screen  pt-40 pb-40 ml-80 mr-80">
+            <div className=" pt-40 pb-40 ml-80 mr-80">  
+                <CloudsState />
+                <Temp />
+                {mostrarDatos()}
+            </div>
         </div>
         </>
     )
