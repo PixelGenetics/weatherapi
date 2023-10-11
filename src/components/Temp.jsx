@@ -17,13 +17,13 @@ const Temp = () => {
         setTempCelcius([resp.data.main.temp])
     })},[filtro])
 
-    const Celcius = () => {
+    /*const Celcius = () => {
         return(tempCelcius.map((datos)=> (
             <div key={datos}>
                 {conversion(datos)}
             </div>
         )))
-    }
+    }*/
     
     function conversion(datos1) {
         return Math.round(datos1 - 273.15)
