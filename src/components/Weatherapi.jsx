@@ -27,10 +27,17 @@ const Weatherapi = () => {
     return (
         <>
         <div className="h-screen  pt-40 pb-40 ml-80 mr-80">
-            <div className=" pt-40 pb-40 ml-80 mr-80">  
-                <CloudsState />
-                <Temp />
-                {mostrarDatos()}
+            <div className=" pt-10 pb-40 ml-80 mr-80 flex flex-col">  
+                <div className="h-20 flex justify-center items-center font-pixelfont">
+                    <div className="flex justify-center ">
+                        <h2>Aplicación de Clima</h2>
+                    </div>
+                </div>
+                <div className="pb-20">
+                    <CloudsState />
+                    <Temp />
+                    {mostrarDatos()}
+                </div>
             </div>
         </div>
         </>
